@@ -1,0 +1,374 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*---------------------------------*/
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*---------------------------------*/
+.warp{
+	width: 1000px;
+    margin: 0 auto;
+}
+/*右上粉絲連結*/
+.fangroup{
+	background: #f6f6f6;
+}
+.fangroup ul{
+	float: right;
+}
+.fangroup li{
+	float: left;
+	font-size: 14px;
+	margin: 7px;
+}
+.fangroup li a{
+	font-family: 微軟正黑體;
+	text-decoration: none;   
+}
+.fangroup img{
+	margin-right: 5px;
+    float: left;
+}
+.fangroup span{
+	float: left;
+}
+.FB{
+	border-right: 1px solid #cccccc;
+	padding-right: 10px;
+	color: #4460a0;
+}
+.hex{
+	color: #00aaec;
+}
+/*清除浮動*/
+.clearfix:after{
+	content: "";
+	display: block;
+	clear:both;
+}
+/*圖片替代文字*/
+.header h1{
+    display: inline-block;
+}
+.header h1 a{
+	background-image: url(https://imgur.com/0HQGpLv.png);
+	width: 174px;
+	height: 36px;
+	display: inline-block;
+	text-indent: 101%;
+	overflow: hidden;
+	white-space: nowrap; 
+	margin-top: 20px;
+	margin-left: 15px; 
+}
+/*選單*/
+.menu{
+	float: right;
+	font-family: 微軟正黑體;
+	margin-top: 27px;
+	position: relative;
+}
+.menu a{
+	color: #00cc99;
+	text-decoration: none;
+	padding: .7em 0;
+	background: #fff;
+	display: block;
+	text-align: center;
+	transition: all .5s;
+}
+.hvr-underline-reveal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-reveal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #00cc99;
+  height: 3px;
+  -webkit-transform: translateY(3px);
+  transform: translateY(3px);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-reveal:hover:before, .hvr-underline-reveal:focus:before, .hvr-underline-reveal:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.menu > li{
+	float: left;
+	margin: 0 20px;
+}
+
+/*下拉式選單*/
+/* transition無法在display切換間做使用 */
+/* 可用 max-height + overflow 來呈現*/
+/* hover部分記得加max-height: 999px */
+.menu ul{
+	z-index: 30;
+	position: absolute;
+	right: 80px;
+	top: 39px;
+	max-height: 0; 
+	overflow: hidden;
+	transition: all .5s;
+}
+
+.menu li:hover ul{
+	display: block;
+	max-height: 999px;
+}
+.dropdown-open a{
+	padding: 20px 13px;
+	border-bottom: dashed #aaa 1px;
+}
+.dropdown-open a:hover{
+	background: #f6fffd;
+	padding-left: 0;
+	border-left: #00cc99 4px solid;
+}
+
+/*主視覺banner*/
+.banner{
+	margin-top: 7px;
+	position: relative;
+}
+.banner h2{
+	z-index: 1;
+	font-family: 微軟正黑體;
+	font-size: 30px;
+	color: #fff;
+	line-height: 45px;
+	letter-spacing: 2px;
+	background-color: rgba(0,0,0,0.4);
+	padding: 30px 30px 30px 60px;
+	width: 1000px;
+	position: absolute;
+	top: 90px;
+}
+
+/* swiper 輪播效果*/
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+/* swiper 按鈕點擊不會有藍色框*/
+.swiper-button-prev,.swiper-button-next{
+	outline: none;
+}
+/*中間內容*/
+.content{
+	margin: 80px 0;
+}
+.content ul li{
+	float: left;
+	width: 300px;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0px 4px 3px #d6d6d6;
+	margin: 0 15px;
+	padding: 15px;
+	text-align: center;
+}
+.content h3{
+	font-family: 微軟正黑體;
+	font-weight: bolder;
+	font-size: 18px;
+	padding: 10px 0;
+}
+.content p{
+	font-family: 微軟正黑體;
+	font-size: 15px;
+	line-height: 20px;
+	letter-spacing: 2px;
+	
+}
+/*jQuery框內容*/
+.content .box{
+	background: none;
+	box-shadow: none;
+	font-family: 微軟正黑體;
+	font-size: 15px;
+	text-align: left;
+	padding: 2px;
+	line-height: 20px;
+	letter-spacing: 2px;
+}
+.content .box > li{
+	list-style-type:disc;
+}
+/* lightbox hover效果*/
+.content > ul > li:hover{
+	box-shadow: 1px 1px 10px #bdbdbd;
+}
+/*表格比較*/
+h4{
+	display:inline-block;
+	font-family: 微軟正黑體;
+	font-weight: bolder;
+	font-size: 24px;
+	text-align: center;
+	margin: 80px 120px 30px 40px;	
+}
+.list{
+	margin: 0 auto;
+	margin-bottom: 70px;
+}
+.list tr,.list th,.list td{
+	font-family: 微軟正黑體;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	padding: 10px 20px 10px 20px;
+	width: 230px;
+}
+.list th{
+	background: #f7f7f7;
+	font-weight: bolder;
+	text-align: left;
+}
+.list .point{
+	color: #00a67d;
+}
+/*表尾*/
+/*資料填框*/
+.footer .formbox{
+	background: linear-gradient(#00644b,#009871);
+	margin: 0 auto;
+	padding: 30px;
+	position: relative;
+}
+.formbox h5{
+	color: #fff;
+	font-family: 微軟正黑體;
+	font-size: 24px;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 2px;
+}
+.formbox textarea{
+	width: 450px;
+	height: 230px;
+	border-radius: 10px;
+	border: 1px solid #00644b;
+	box-shadow: 4px 1px 3px #00644b;
+	margin: 20px 0 0 20px; 
+}
+.formbox .write{
+	float: right;
+	width: 450px;
+	padding-top: 20px;
+
+}
+.formbox label{
+	color: #fff;
+	font-family: 微軟正黑體;
+
+}
+.formbox input{
+	width: 430px;
+	border-radius: 10px 10px 50px 10px;
+	border: 1px solid #00644b;
+	box-shadow: 2px 2px 4px #00644b;
+	padding: 6px 0; 
+	margin: 10px 0;
+}
+/*送出按鈕*/
+#send{
+	width: 65px;
+	height: 30px;
+	color: #fff;
+	background: #00cc99;
+	border-radius: 7px;
+	border: none;
+	box-shadow: none;
+	float: right;
+}
+#send:hover{
+	color: #00644b;
+	font-weight: bolder;
+	background: #fff;
+	cursor: pointer;
+}
+/*表尾資訊*/
+.footer img{
+	margin: 40px 0  60px 20px; 
+	position: absolute;
+}
+.footer p{
+	font-size: 15px;
+	line-height: 20px;
+	letter-spacing: 1.5px;
+	font-family: 微軟正黑體;
+	margin: 40px 200px 60px 0;
+	right: 0;
+	position: absolute;
+}
+.footer span{
+	color: #e12d80;
+	font-weight: bolder;
+}
+
+.footer .top{
+	position: fixed;
+	bottom: 120px;
+	right: 100px;
+}
+
+/*---------------------------------*/
